@@ -27,17 +27,30 @@ namespace ImageSample
                 // 背景色を設定
                 BackgroundColor = Color.White,
                 // スペースを設定
-                Spacing = 20,
+                Spacing = 30,
             };
 
             // Aspectを全てさらう
             foreach (Aspect aspect in Enum.GetValues(typeof(Aspect)))
-            {                
+            {
+                // Aspect文字表示用のラベル
+                var label = new Label
+                {
+                    // Aspectを文字表示
+                    Text = aspect.ToString(),
+                    // テキストのカラーを設定
+                    TextColor = Color.Black,
+                    // 中心表示にする
+                    HorizontalOptions = LayoutOptions.Center,
+                    // フォントサイズを設定
+                    FontSize = 30,
+                };
+                
                 // 画像
                 var image = new Image
                 {
                     // 画像を読み込んでSourceプロパティに設定
-                    Source = ImageSource.FromResource("ImageSample.Resources.Images.button_leftArrow.png"),
+                    Source = ImageSource.FromResource("ImageSample.Resources.Images.icon_A.png"),
                     // 背景色を設定
                     BackgroundColor = Color.Green,
                     // アスペクトを設定
@@ -45,10 +58,13 @@ namespace ImageSample
                 };
 
                 // ラベルと画像をレイアウト
+                // レイアウトの幅は、ラベルの幅と画像の幅を比較して大きい方の幅になる。
+                // ラベルの幅の方が大きくなった場合、このページの趣旨と異なるので注意(画像の幅が変わる)。
                 var layout = new StackLayout
                 {
                     Children =
                     {
+                        label,
                         image,
                     },
                 };

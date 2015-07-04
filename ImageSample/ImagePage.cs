@@ -8,11 +8,14 @@ namespace ImageSample
     {
         public ImagePage()
         {
+            // 背景色の設定
+            BackgroundColor = Color.White;
+
             // Imageビューの生成
             var image = new Image
             {
                 // 画像を読み込んでSourceプロパティに設定
-                Source = ImageSource.FromResource("ImageSample.Resources.Images.button_leftArrow.png"),
+                Source = ImageSource.FromResource("ImageSample.Resources.Images.icon_A.png"),
             };
             
             Content = new StackLayout
