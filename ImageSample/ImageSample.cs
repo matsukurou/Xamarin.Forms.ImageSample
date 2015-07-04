@@ -9,7 +9,8 @@ namespace ImageSample
         public App()
         {
             //MainPage = new ImagePage();
-            MainPage = new Image_AspectAll_LayoutDefaultPage();
+            //MainPage = new Image_AspectAll_LayoutDefaultPage();
+            MainPage = new Image_AspectAll_LayoutFillPage();
             return;
         }
 
